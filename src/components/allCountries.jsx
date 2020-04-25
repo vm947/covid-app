@@ -1,43 +1,50 @@
 import React, { Component } from "react";
 import axios from "axios";
+import SearchBox from "./common/searchBox";
+import TableHead from './common/tableHead';
+import TableBody from "./common/tableBody";
 
 const countryData = "https://corona.lmao.ninja/v2/countries?sort=country";
 
 class AllCountries extends Component {
   state = {
     allCountries: [],
+    searchQuery: "",
   };
 
   async componentDidMount() {
     const { data: allCountries } = await axios.get(countryData);
-    console.log(allCountries);
     this.setState({ allCountries });
   }
 
+  handSearch = (query) => {
+    this.setState({ searchQuery: query });
+  };
+
+  getData = () => {
+    const { allCountries, searchQuery } = this.state;
+
+    let filtered = allCountries;
+    if (searchQuery) {
+      filtered = allCountries.filter((c) =>
+        c.country.toLowerCase().includes(searchQuery.toLocaleLowerCase())
+      );
+    }
+    return filtered;
+  };
+
   render() {
+    const { searchQuery } = this.state;
+    const info = this.getData();
+    
     return (
-      <table className="table table-light mt-4">
-        <thead>
-          <tr>
-            <th scope="col">Country Name</th>
-            <th scope="col">Today's Cases</th>
-            <th scope="col">Total Deaths</th>
-            <th scope="col">Today's Deaths</th>
-            <th scope="col">Case Per One Million</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.state.allCountries.map((stat) => (
-            <tr key={stat.country}>
-              <th scope="row">{stat.country}</th>
-              <td>{stat.todayCases}</td>
-              <td>{stat.deaths}</td>
-              <td>{stat.todayDeaths}</td>
-              <td>{stat.casesPerOneMillion}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div>
+        <SearchBox onChange={this.handSearch} value={searchQuery} />
+        <table className="table table-light mt-4">
+          <TableHead />
+          <TableBody info={info} />
+        </table>
+      </div>
     );
   }
 }
