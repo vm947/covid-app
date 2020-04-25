@@ -8,7 +8,6 @@ const WorldStatistic = ({
   casesPerOneMillion,
   deathsPerOneMillion,
 }) => {
-  
   return (
     <div id="casesBody">
       <table id="tableBody">
@@ -32,6 +31,10 @@ const WorldStatistic = ({
             <td>Death Per Million: {deathsPerOneMillion}</td>
           </tr>
         </tbody>
+        <div className = "sitation">
+          <small>Data Repository by Johns Hopkins CSSE.</small>
+          <small>API provied by: NovelCOVID API</small>
+        </div>
       </table>
     </div>
   );

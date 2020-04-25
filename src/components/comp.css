@@ -1,14 +1,22 @@
-#casesBody{
-    display: flex;
-    justify-content: center;
+#casesBody {
+  display: flex;
+  justify-content: center;
 }
 
+#tableBody {
+  margin-top: 25px;
+  width: 750px;
+  height: 650px;
+  font-size: 1.5rem;
+  border: 5px solid darkblue;
+  background-color: lightgreen;
+}
 
-#tableBody{
-    margin-top: 25px;
-    width: 750px;
-    height:650px;
-    font-size: 1.5rem;
-    border: 5px solid darkblue;
-    background-color: lightgreen;
+.sitation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+  font-size: 1rem;
 }
