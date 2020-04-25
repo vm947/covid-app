@@ -1,11 +1,15 @@
 import React from "react";
 
-const TableBody = ({info}) => {
+const TableBody = ({ info }) => {
   return (
     <tbody>
       {info.map((stat) => (
         <tr key={stat.country}>
-          <th scope="row">{stat.country}</th>
+          <th scope="row">
+            <a href={`https://en.wikipedia.org/wiki/${stat.country}`} target = "_blank">
+              {stat.country}
+            </a>
+          </th>
           <td>{stat.todayCases}</td>
           <td>{stat.deaths}</td>
           <td>{stat.todayDeaths}</td>
