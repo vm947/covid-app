@@ -5,7 +5,7 @@ const NavBar = (props) => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-danger bg-dark">
-        <NavLink className="navbar-brand" to="/allCountries">
+        <NavLink className="navbar-brand" to="/">
           Covid Stats
         </NavLink>
         <div className="navbar" id="navbarNav">
