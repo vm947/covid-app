@@ -21,13 +21,18 @@
   font-size: 1rem;
 }
 
-nav{
-  width: 100%;
+
+#stats{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-@media only screen and (max-width: 600px) {
-  table{
-   width: 500px;
+@media only screen and (max-width: 400px) {
+  #stats{
+    width: 350px;
+    font-size: .8rem;
   }
 }
 

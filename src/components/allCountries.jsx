@@ -40,7 +40,7 @@ class AllCountries extends Component {
     return (
       <div>
         <SearchBox onChange={this.handSearch} value={searchQuery} />
-        <table className="table table-light mt-4">
+        <table id="stats" className="table table-light mt-4">
           <TableHead />
           <TableBody info={info} />
         </table>
