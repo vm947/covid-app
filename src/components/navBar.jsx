@@ -16,7 +16,7 @@ const NavBar = (props) => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/allCountries">
+              <NavLink className="nav-link" to="/">
                 All Countries 
               </NavLink>
             </li>
