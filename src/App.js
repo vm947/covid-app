@@ -8,7 +8,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      {/* <NavBar /> */}
       <Route exact path="/globalStats" component={GlobalStatistics}></Route>
       <Route exact path="/" component={AllCountries}></Route>
     </div>
